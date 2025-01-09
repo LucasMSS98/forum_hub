@@ -1,6 +1,7 @@
 package forum.hub.api.controller;
 
-import forum.hub.api.topico.*;
+import forum.hub.api.domain.topico.*;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -14,6 +15,7 @@ import java.util.Optional;
 
 @RequestMapping("/topicos")
 @RestController
+@SecurityRequirement(name = "bearer-key")
 public class TopicoController {
 
     @Autowired
